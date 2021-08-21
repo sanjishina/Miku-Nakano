@@ -36,7 +36,7 @@ def afk(update: Update, context: CallbackContext):
     sql.set_afk(update.effective_user.id, reason)
     fname = update.effective_user.first_name
     try:
-        update.effective_message.reply_text("User {} is now away from keyboard!{}".format(
+        update.effective_message.reply_text(" {} is now afk!{}".format(
             fname, notice))
     except BadRequest:
         pass
@@ -136,7 +136,7 @@ def check_afk(update, context, user_id, fst_name, userc_id):
 
 __help__ = """
  • `/afk <reason>`*:* mark yourself as AFK(away from keyboard).
- • `brb <reason>`*:* same as the afk command - but not a command.
+ • `brb <reason>`*:* same as the afk command 
 When marked as AFK, any mentions will be replied to with a message to say you're not available!
 """
 
